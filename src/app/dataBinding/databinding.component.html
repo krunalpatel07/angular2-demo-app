@@ -9,3 +9,7 @@
     </li>
   </ul>
 </div>
+<hr/>
+<h3 [ngStyle]="{textAlign: 'center'}">common directives example</h3>
+<button (click)="toggleParagraph()" class="waves-effect waves-light btn">DISPLAY DETAILS</button>
+<p *ngIf="displayParagraph">Secret Password = tuna</p>

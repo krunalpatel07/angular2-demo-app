@@ -10,6 +10,7 @@ export class DataBindingComponent {
   username: string = '';
   usernameDisabled: boolean = true;
   usernamesCollection: string[] = [];
+  displayParagraph: boolean = false;
 
   onChangeText() {
     if(this.username !== ''){
@@ -23,5 +24,8 @@ export class DataBindingComponent {
     this.usernamesCollection.push(this.username);
     this.username = '';
     this.usernameDisabled = true;
+  };
+  toggleParagraph() {
+    this.displayParagraph = !this.displayParagraph;
   }
 }
