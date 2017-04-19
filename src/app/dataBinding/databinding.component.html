@@ -1,3 +1,4 @@
+<h3 [ngStyle]="{textAlign: 'center'}">databinding example</h3>
 <input type="text" [(ngModel)]="username" (input)="onChangeText()" />
 <p>{{username}}</p>
 <button (click)="addUsername()" class="waves-effect waves-light btn" [disabled]="usernameDisabled">ADD USER NAME</button>

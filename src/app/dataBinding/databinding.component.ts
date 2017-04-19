@@ -11,7 +11,7 @@ export class DataBindingComponent {
   usernameDisabled: boolean = true;
   usernamesCollection: string[] = [];
 
-  onChangeText = () => {
+  onChangeText() {
     if(this.username !== ''){
       this.usernameDisabled = false;
     }
@@ -19,7 +19,7 @@ export class DataBindingComponent {
       this.usernameDisabled = true;
     }
   };
-  addUsername = () => {
+  addUsername() {
     this.usernamesCollection.push(this.username);
     this.username = '';
     this.usernameDisabled = true;
