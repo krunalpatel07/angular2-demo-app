@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {addDeclarationToModule} from "@angular/cli/lib/ast-tools";
 
 @Component ({
   selector: 'data-binding-test',
