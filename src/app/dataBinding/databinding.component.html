@@ -12,4 +12,5 @@
 <hr/>
 <h3 [ngStyle]="{textAlign: 'center'}">common directives example</h3>
 <button (click)="toggleParagraph()" class="waves-effect waves-light btn">DISPLAY DETAILS</button>
-<p *ngIf="displayParagraph">Secret Password = tuna</p>
+<p *ngIf="displayParagraph">toggle example</p>
+<div *ngFor="let addDate of addDateOnClick; let i = index" [ngStyle]="{backgroundColor: i > 3 ? 'blue':''}" [ngClass]="{'white-background': i > 3 ? whiteColorText: false}">{{addDate}}</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {addDeclarationToModule} from "@angular/cli/lib/ast-tools";
 
 @Component ({
   selector: 'data-binding-test',
@@ -11,6 +12,8 @@ export class DataBindingComponent {
   usernameDisabled: boolean = true;
   usernamesCollection: string[] = [];
   displayParagraph: boolean = false;
+  addDateOnClick: any[] = [];
+  whiteColorText: boolean = false;
 
   onChangeText() {
     if(this.username !== ''){
@@ -27,5 +30,9 @@ export class DataBindingComponent {
   };
   toggleParagraph() {
     this.displayParagraph = !this.displayParagraph;
+    this.addDateOnClick.push(new Date());
+    if(this.addDateOnClick.length > 4){
+      this.whiteColorText = true;
+    }
   }
 }
