@@ -4,4 +4,6 @@
   <br/>
   <app-gamecontrol (incrementNum)="logNumber($event)"></app-gamecontrol>
   <p>Incremented Number : {{countNumber}}</p>
+  <app-odd *ngIf="countNumber%2 !== 0" [oddCountNumber]="countNumber"></app-odd>
+  <app-even *ngIf="countNumber%2 === 0" [evenCountNumber]="countNumber"></app-even>
 </div>
