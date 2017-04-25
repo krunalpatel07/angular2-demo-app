@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  countNumber: number;
+  logNumber(event){
+    this.countNumber = event;
+  }
 }

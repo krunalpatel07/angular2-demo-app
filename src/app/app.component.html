@@ -1,3 +1,7 @@
 <div class="container">
   <data-binding-test></data-binding-test>
+  <hr/>
+  <br/>
+  <app-gamecontrol (incrementNum)="logNumber($event)"></app-gamecontrol>
+  <p>Incremented Number : {{countNumber}}</p>
 </div>
