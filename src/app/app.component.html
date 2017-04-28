@@ -6,4 +6,10 @@
   <p>Incremented Number : {{countNumber}}</p>
   <app-odd *ngIf="countNumber%2 !== 0" [oddCountNumber]="countNumber"></app-odd>
   <app-even *ngIf="countNumber%2 === 0" [evenCountNumber]="countNumber"></app-even>
+  <hr/>
+  <br>
+  <h2>Example of services</h2>
+  <app-activeusers></app-activeusers>
+  <hr/>
+  <app-inactiveusers></app-inactiveusers>
 </div>

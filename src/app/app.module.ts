@@ -8,13 +8,18 @@ import { DataBindingModule } from './dataBinding/databinding.module';
 import { GamecontrolComponent } from './gamecontrol/gamecontrol.component';
 import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
+import { InactiveusersComponent } from './inactiveusers/inactiveusers.component';
+import { ActiveusersComponent } from './activeusers/activeusers.component';
+import { UserService } from "./services/user.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     GamecontrolComponent,
     OddComponent,
-    EvenComponent
+    EvenComponent,
+    InactiveusersComponent,
+    ActiveusersComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,7 @@ import { EvenComponent } from './even/even.component';
     HttpModule,
     DataBindingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

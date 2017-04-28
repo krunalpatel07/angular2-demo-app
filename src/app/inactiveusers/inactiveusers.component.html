@@ -1,0 +1,6 @@
+<h4>Inctive Users</h4>
+<ul>
+  <li *ngFor="let user of inActiveUsers">
+    <span>{{user}}</span> | <span (click)="setActive(user)">setActive</span>
+  </li>
+</ul>
