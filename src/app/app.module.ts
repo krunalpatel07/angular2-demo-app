@@ -11,6 +11,7 @@ import { EvenComponent } from './even/even.component';
 import { InactiveusersComponent } from './inactiveusers/inactiveusers.component';
 import { ActiveusersComponent } from './activeusers/activeusers.component';
 import { UserService } from "./services/user.service";
+import { CountService } from "./services/count.service";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { UserService } from "./services/user.service";
     HttpModule,
     DataBindingModule
   ],
-  providers: [UserService],
+  providers: [UserService,CountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

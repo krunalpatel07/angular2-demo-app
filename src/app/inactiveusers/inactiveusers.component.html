@@ -3,4 +3,8 @@
   <li *ngFor="let user of inActiveUsers">
     <span>{{user}}</span> | <span (click)="setActive(user)">setActive</span>
   </li>
+
+  <div>
+    <span>InactiveToActive Count : {{inactiveToActiveCount}}</span>
+  </div>
 </ul>
