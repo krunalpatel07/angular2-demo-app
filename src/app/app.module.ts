@@ -12,6 +12,12 @@ import { InactiveusersComponent } from './inactiveusers/inactiveusers.component'
 import { ActiveusersComponent } from './activeusers/activeusers.component';
 import { UserService } from "./services/user.service";
 import { CountService } from "./services/count.service";
+import { AppHeadersComponent } from './app-headers/app-headers.component';
+import {AppRoutingModule} from "./app-routing.module";
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PipesexampleComponent } from './pipesexample/pipesexample.component';
+import {ReversePipe} from "./reverse.pipes";
+import {sortingPipe} from "./sort.pipes";
 
 @NgModule({
   declarations: [
@@ -20,13 +26,19 @@ import { CountService } from "./services/count.service";
     OddComponent,
     EvenComponent,
     InactiveusersComponent,
-    ActiveusersComponent
+    ActiveusersComponent,
+    AppHeadersComponent,
+    PagenotfoundComponent,
+    PipesexampleComponent,
+    ReversePipe,
+    sortingPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    DataBindingModule
+    DataBindingModule,
+    AppRoutingModule
   ],
   providers: [UserService,CountService],
   bootstrap: [AppComponent]

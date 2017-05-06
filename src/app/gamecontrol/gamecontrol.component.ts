@@ -9,6 +9,7 @@ export class GamecontrolComponent implements OnInit {
   @Output() incrementNum: EventEmitter<number> = new EventEmitter<number>();
   count: number = 0;
   timeoutRef: any;
+  countNumber: number = 0;
 
   incrementNumber(){
     var _this = this;

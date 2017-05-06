@@ -1,2 +1,6 @@
 <button type="button" class="btn" (click)="incrementNumber()">START A GAME</button>
 <button type="button" class="btn" (click)="stopIncrementNumber()">STOP GAME</button>
+
+<p>Incremented Number : {{countNumber}}</p>
+<app-odd *ngIf="countNumber%2 !== 0" [oddCountNumber]="countNumber"></app-odd>
+<app-even *ngIf="countNumber%2 === 0" [evenCountNumber]="countNumber"></app-even>
