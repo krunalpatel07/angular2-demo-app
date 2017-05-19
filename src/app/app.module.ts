@@ -18,6 +18,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PipesexampleComponent } from './pipesexample/pipesexample.component';
 import {ReversePipe} from "./reverse.pipes";
 import {sortingPipe} from "./sort.pipes";
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {sortingPipe} from "./sort.pipes";
     PagenotfoundComponent,
     PipesexampleComponent,
     ReversePipe,
-    sortingPipe
+    sortingPipe,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
