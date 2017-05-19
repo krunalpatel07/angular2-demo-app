@@ -9,6 +9,9 @@ import { NgForm } from '@angular/forms';
 export class FormsComponent implements OnInit {
   subscription: string = 'advanced';
   @ViewChild('userForm')userFormData;
+  emailAddress: string;
+  passwordValue: string;
+  subscriptionValue: string;
   constructor() {
   }
 
@@ -18,5 +21,8 @@ export class FormsComponent implements OnInit {
 
   formSubmit(formData: NgForm){
     console.log(formData);
+    this.emailAddress = this.userFormData.form.value.email;
+    this.passwordValue = this.userFormData.form.value.password;
+    this.subscriptionValue = this.userFormData.form.value['subscription-dropdown'];
   }
 }
