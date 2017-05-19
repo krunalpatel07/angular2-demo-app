@@ -1,13 +1,16 @@
 <form #userForm="ngForm" (ngSubmit)="formSubmit(userForm)">
   <div>
-    <input type="text" class="input-field" name="email" ngModel email/>
+    <input type="text" class="input-field" name="email" ngModel email required #email="ngModel"/>
+    <span style="color: red" *ngIf="!email.valid && email.touched">Please enter correct email</span>
   </div>
   <select name="subscription-dropdown" [ngModel]="subscription" style="display: block">
     <option value="basic">basic</option>
     <option value="advanced">advanced</option>
     <option value="pro">pro</option>
   </select>
-  <input type="password" class="input-field" name="password"  >
+  <input type="password" class="input-field" name="password" ngModel #password="ngModel" required>
+  <span style="color: red" *ngIf="!password.valid && password.touched">Please enter correct password.</span>
+  <br/>
   <button type="submit" class="btn" [disabled]="!userForm.valid">submit</button>
 </form>
 

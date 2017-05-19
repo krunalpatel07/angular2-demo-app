@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,9 +8,12 @@ import { NgForm } from '@angular/forms';
 })
 export class FormsComponent implements OnInit {
   subscription: string = 'advanced';
-  constructor() { }
+  @ViewChild('userForm')userFormData;
+  constructor() {
+  }
 
   ngOnInit() {
+    console.log(this.userFormData);
   }
 
   formSubmit(formData: NgForm){
