@@ -11,7 +11,7 @@
   <input type="password" class="input-field" name="password" ngModel #password="ngModel" required>
   <span style="color: red" *ngIf="!password.valid && password.touched">Please enter correct password.</span>
   <br/>
-  <button type="submit" class="btn" [disabled]="!userForm.valid">submit</button>
+  <button class="btn" [disabled]="!userForm.valid">submit</button>
 </form>
 
 <h3>
@@ -25,4 +25,32 @@
 </div>
 <div>
   subscription : {{ subscriptionValue }}
+</div>
+
+<h3> Reactive forms example</h3>
+<div class="s12 m12 col">
+  <form [formGroup]="projectStatusForm" (ngSubmit)="onFormSubmit()">
+    <div class="col m12">
+      <label for="projectName">Project Name</label>
+      <input formControlName="projectname" type="text" id="projectName">
+    </div>
+    <span *ngIf="!projectStatusForm.get('projectname').valid && projectStatusForm.get('projectname').touched">Please Enter Project Name.</span>
+    <div class="col m12">
+      <label for="email">Email</label>
+      <input formControlName="email" type="text" id="email">
+    </div>
+    <span *ngIf="!projectStatusForm.get('email').valid && projectStatusForm.get('email').touched">Please Enter Valid Email.</span>
+    <div class="col m6">
+      <select formControlName="status" style="display: block">
+        <option value="stable">Stable</option>
+        <option value="critical">Critical</option>
+        <option value="finished">finished</option>
+      </select>
+    </div>
+    <div class="row">
+      <button class="btn">Submit</button>
+    </div>
+
+
+  </form>
 </div>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import { PipesexampleComponent } from './pipesexample/pipesexample.component';
 import {ReversePipe} from "./reverse.pipes";
 import {sortingPipe} from "./sort.pipes";
 import { FormsComponent } from './forms/forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -33,14 +34,16 @@ import { FormsComponent } from './forms/forms.component';
     PipesexampleComponent,
     ReversePipe,
     sortingPipe,
-    FormsComponent
+    FormsComponent,
+    ReactiveFormsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     DataBindingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [UserService,CountService],
   bootstrap: [AppComponent]
