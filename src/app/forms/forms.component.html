@@ -39,7 +39,11 @@
       <label for="email">Email</label>
       <input formControlName="email" type="text" id="email">
     </div>
-    <span *ngIf="!projectStatusForm.get('email').valid && projectStatusForm.get('email').touched">Please Enter Valid Email.</span>
+    <span *ngIf="!projectStatusForm.get('email').valid && projectStatusForm.get('email').touched">
+       <span *ngIf="projectStatusForm.get('email').errors['emailForbidden']">This email already taken</span>
+       <span *ngIf="projectStatusForm.get('email').errors['required']">Please Enter Valid Email!</span>
+    </span>
+
     <div class="col m6">
       <select formControlName="status" style="display: block">
         <option value="stable">Stable</option>

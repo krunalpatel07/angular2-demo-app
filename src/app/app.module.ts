@@ -19,7 +19,6 @@ import { PipesexampleComponent } from './pipesexample/pipesexample.component';
 import {ReversePipe} from "./reverse.pipes";
 import {sortingPipe} from "./sort.pipes";
 import { FormsComponent } from './forms/forms.component';
-import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +33,7 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     PipesexampleComponent,
     ReversePipe,
     sortingPipe,
-    FormsComponent,
-    ReactiveFormsComponent
+    FormsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm, FormGroup, FormControl, Validators} from '@angular/forms';
+import {Observable} from "rxjs/observable";
 
 @Component({
   selector: 'app-forms',
@@ -20,7 +21,7 @@ export class FormsComponent implements OnInit {
     console.log(this.userFormData);
     this.projectStatusForm = new FormGroup({
       'projectname' : new FormControl(null, [Validators.required, this.forbiddenProjectNameValidator]),
-      'email' : new FormControl(null, [Validators.required, Validators.email]),
+      'email' : new FormControl(null, [Validators.required, Validators.email],this.asyncValidator),
       'status' : new FormControl('finished')
     });
   }
@@ -53,5 +54,18 @@ export class FormsComponent implements OnInit {
       return {'forbiddenName' : true };
     }
     return null;
+  }
+
+  asyncValidator(control: FormControl) : Promise<any> | Observable<any> {
+    const promise = new Promise<any>((resolve,reject) => {
+      setTimeout(() => {
+        if(control.value === 'test@gmail.com'){
+          resolve({'emailForbidden' : true});
+        }else{
+          resolve(null);
+        }
+      },1500)
+    });
+    return promise;
   }
 }
