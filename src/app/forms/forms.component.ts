@@ -24,5 +24,17 @@ export class FormsComponent implements OnInit {
     this.emailAddress = this.userFormData.form.value.email;
     this.passwordValue = this.userFormData.form.value.password;
     this.subscriptionValue = this.userFormData.form.value['subscription-dropdown'];
+
+    // set value example
+    this.userFormData.setValue({
+      email : "test2@gmail.com",
+      password : 'test2',
+      'subscription-dropdown' : 'basic'
+    });
+
+    //patch value example
+    this.userFormData.form.patchValue({
+      email : "patching@gmail.com"
+    });
   }
 }
