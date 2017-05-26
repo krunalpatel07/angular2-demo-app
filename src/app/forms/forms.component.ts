@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {NgForm, FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
@@ -12,11 +12,17 @@ export class FormsComponent implements OnInit {
   emailAddress: string;
   passwordValue: string;
   subscriptionValue: string;
+  projectStatusForm: FormGroup;
   constructor() {
   }
 
   ngOnInit() {
     console.log(this.userFormData);
+    this.projectStatusForm = new FormGroup({
+      'projectname' : new FormControl(null, [Validators.required, this.forbiddenProjectNameValidator]),
+      'email' : new FormControl(null, [Validators.required, Validators.email]),
+      'status' : new FormControl('finished')
+    });
   }
 
   formSubmit(formData: NgForm){
@@ -36,5 +42,16 @@ export class FormsComponent implements OnInit {
     this.userFormData.form.patchValue({
       email : "patching@gmail.com"
     });
+  }
+
+  onFormSubmit(){
+    console.log(this.projectStatusForm);
+  }
+
+  forbiddenProjectNameValidator(control:FormControl):{[s:string]:boolean}{
+    if(control.value !== null && control.value.indexOf('test') > -1){
+      return {'forbiddenName' : true };
+    }
+    return null;
   }
 }
