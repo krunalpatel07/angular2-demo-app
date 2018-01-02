@@ -6,6 +6,7 @@ import {ActiveusersComponent} from "./activeusers/activeusers.component";
 import {PagenotfoundComponent} from "./pagenotfound/pagenotfound.component";
 import {PipesexampleComponent} from "./pipesexample/pipesexample.component";
 import {FormsComponent} from "./forms/forms.component";
+import {LikeComponent} from "./like/like.component";
 
 const routes: Routes = [
   { path : '', redirectTo : '/dataBindingExample', pathMatch : 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path : 'servicesExample', component : ActiveusersComponent },
   { path : 'pipesExample', component : PipesexampleComponent },
   { path : 'forms', component : FormsComponent },
+  { path : 'likes', component : LikeComponent },
   { path : '**', component : PagenotfoundComponent }
 ]
 

@@ -1,0 +1,21 @@
+
+<h2>
+  like and dislike compononet example
+</h2>
+
+<div>
+  <span (click)="handleClick()" [ngClass] = "like ? 'glyphicon glyphicon-star' : 'glyphicon glyphicon-star-empty'"></span>
+</div>
+<hr/>
+
+<h2>
+  rating component example
+</h2>
+
+<div>
+  <ul>
+    <li (click)="handleStarClick(i)"
+        *ngFor="let number of numbers; let i = index"
+        [ngClass]="gaveRatings && ratings > i ? 'glyphicon glyphicon-star' : 'glyphicon glyphicon-star-empty'"></li>
+  </ul>
+</div>
