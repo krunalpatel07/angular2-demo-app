@@ -17,5 +17,6 @@
     <li (click)="handleStarClick(i)"
         *ngFor="let number of numbers; let i = index"
         [ngClass]="gaveRatings && ratings > i ? 'glyphicon glyphicon-star' : 'glyphicon glyphicon-star-empty'"></li>
+    <span>{{ratings}}/10</span>
   </ul>
 </div>
